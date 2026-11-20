@@ -2,6 +2,7 @@ import { usePage } from '@inertiajs/react';
 import {
     Compass,
     Eye,
+    Factory,
     Globe,
     Heart,
     HeartHandshake,
@@ -55,13 +56,14 @@ type AboutPageContent = {
 export default function About({ about }: { about: AboutContent }) {
     const { content } = usePage<SharedProps>().props;
     const page = content.about as AboutPageContent;
+    const [intro, ...story] = about.who_we_are;
 
     return (
         <SiteLayout>
             <Seo title={page.seo.title} description={page.seo.description} />
 
             <section className="bg-brand-cream">
-                <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
                     <div className="text-center">
                         <Badge className="rounded-full bg-brand-green px-3 py-1 text-white">
                             {page.badge}
@@ -73,8 +75,53 @@ export default function About({ about }: { about: AboutContent }) {
                             {page.heading}
                         </RevealHeading>
                     </div>
-                    <Reveal className="mt-8 space-y-5 text-base leading-relaxed text-brand-ink/75 sm:text-lg">
-                        {about.who_we_are.map((paragraph) => (
+
+                    <Reveal className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-brand-ink/75 sm:text-lg">
+                        {intro ? (
+                            <p className="text-lg font-medium text-brand-ink sm:text-xl">
+                                {intro}
+                            </p>
+                        ) : null}
+                    </Reveal>
+
+                    <Reveal
+                        delay={0.1}
+                        className="relative mx-auto mt-8 max-w-3xl sm:mt-10"
+                    >
+                        <div
+                            aria-hidden="true"
+                            className="absolute inset-0 translate-x-3 translate-y-3 rounded-3xl bg-brand-green/10 sm:translate-x-4 sm:translate-y-4"
+                        />
+                        <figure className="relative overflow-hidden rounded-3xl bg-brand-sand shadow-xl ring-1 ring-brand-green/15">
+                            <img
+                                src="/factoryImage.jpg"
+                                alt="The Elkris Foods manufacturing and packaging facility in Lagos, Nigeria"
+                                className="aspect-[4/3] w-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <figcaption className="absolute inset-x-3 bottom-3 flex items-center gap-3 rounded-2xl bg-white/90 px-4 py-3 shadow-sm backdrop-blur sm:inset-x-4 sm:bottom-4">
+                                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-mint text-brand-green">
+                                    <Factory className="size-4" />
+                                </span>
+                                <span>
+                                    <span className="block text-[11px] font-semibold tracking-widest text-brand-green uppercase">
+                                        Our Facility
+                                    </span>
+                                    <span className="block text-xs font-medium text-brand-ink/65">
+                                        Manufacturing &amp; packaging · Lagos,
+                                        Nigeria
+                                    </span>
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </Reveal>
+
+                    <Reveal
+                        delay={0.05}
+                        className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-brand-ink/75 sm:mt-10 sm:text-lg"
+                    >
+                        {story.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                         ))}
                     </Reveal>
