@@ -166,7 +166,6 @@ export default function Home({
                                     showcaseImages[index] ??
                                     product.gallery?.[0]
                                 }
-                                imageFit="contain"
                             />
                         </RevealItem>
                     ))}

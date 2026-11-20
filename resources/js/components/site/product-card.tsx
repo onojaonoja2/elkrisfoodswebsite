@@ -7,11 +7,9 @@ import type { Product, SharedProps } from '@/types';
 export function ProductCard({
     product,
     image,
-    imageFit = 'cover',
 }: {
     product: Product;
     image?: string | null;
-    imageFit?: 'cover' | 'contain';
 }) {
     const { content } = usePage<SharedProps>().props;
     const labels = content.global.product_card;
@@ -24,32 +22,13 @@ export function ProductCard({
                 className="relative block aspect-square overflow-hidden bg-brand-cream"
             >
                 {imageSrc ? (
-                    imageFit === 'contain' ? (
-                        <>
-                            <div
-                                aria-hidden="true"
-                                className="absolute inset-0 scale-110 bg-cover bg-center opacity-40 blur-2xl"
-                                style={{
-                                    backgroundImage: `url(${imageSrc})`,
-                                }}
-                            />
-                            <img
-                                src={imageSrc}
-                                alt={product.name}
-                                className="relative z-10 h-full w-full object-contain"
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        </>
-                    ) : (
-                        <img
-                            src={imageSrc}
-                            alt={product.name}
-                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    )
+                    <img
+                        src={imageSrc}
+                        alt={product.name}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                    />
                 ) : (
                     <div className="flex h-full w-full items-center justify-center text-muted-foreground">
                         {labels.no_image}
