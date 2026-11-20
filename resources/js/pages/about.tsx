@@ -76,9 +76,9 @@ export default function About({ about }: { about: AboutContent }) {
                         </RevealHeading>
                     </div>
 
-                    <Reveal className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-brand-ink/75 sm:text-lg">
+                    <Reveal className="mx-auto mt-8 max-w-3xl">
                         {intro ? (
-                            <p className="text-lg font-medium text-brand-ink sm:text-xl">
+                            <p className="text-lg leading-relaxed font-medium text-brand-ink sm:text-xl">
                                 {intro}
                             </p>
                         ) : null}
@@ -119,10 +119,15 @@ export default function About({ about }: { about: AboutContent }) {
 
                     <Reveal
                         delay={0.05}
-                        className="mx-auto mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-brand-ink/75 sm:mt-10 sm:text-lg"
+                        className="mx-auto mt-8 max-w-3xl space-y-5 sm:mt-10"
                     >
                         {story.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
+                            <p
+                                key={paragraph}
+                                className="text-lg leading-relaxed font-medium text-brand-ink sm:text-xl"
+                            >
+                                {paragraph}
+                            </p>
                         ))}
                     </Reveal>
                 </div>
@@ -136,7 +141,7 @@ export default function About({ about }: { about: AboutContent }) {
                             <h2 className="text-xl font-bold">
                                 {page.vision_heading}
                             </h2>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                                 {about.vision}
                             </p>
                         </Card>
@@ -147,7 +152,7 @@ export default function About({ about }: { about: AboutContent }) {
                             <h2 className="text-xl font-bold">
                                 {page.mission_heading}
                             </h2>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                                 {about.mission}
                             </p>
                         </Card>

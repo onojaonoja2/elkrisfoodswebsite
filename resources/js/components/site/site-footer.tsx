@@ -29,15 +29,15 @@ export function SiteFooter() {
                         alt={brand.site_name}
                         className="h-12 w-auto"
                     />
-                    <p className="mt-4 max-w-sm text-sm text-brand-ink/75">
+                    <p className="mt-4 max-w-sm text-base text-brand-ink/75">
                         {settings?.['brand.positioning_line'] ??
                             footer.tagline_fallback}
                     </p>
-                    <p className="mt-2 text-sm font-semibold text-brand-green">
+                    <p className="mt-2 text-base font-semibold text-brand-green">
                         {settings?.['brand.positioning_tagline'] ??
                             footer.positioning_fallback}
                     </p>
-                    <div className="mt-4 space-y-1 text-sm text-brand-ink/75">
+                    <div className="mt-4 space-y-1 text-base text-brand-ink/75">
                         {settings?.['contact.address'] ? (
                             <p>{settings['contact.address']}</p>
                         ) : null}
@@ -64,7 +64,7 @@ export function SiteFooter() {
                     </div>
                     {socials.length > 0 ? (
                         <div className="mt-4">
-                            <p className="text-xs font-semibold tracking-wider text-brand-green uppercase">
+                            <p className="text-sm font-semibold tracking-wider text-brand-green uppercase">
                                 {footer.follow_heading}
                             </p>
                             <div className="mt-2 flex flex-wrap gap-3">
@@ -74,7 +74,7 @@ export function SiteFooter() {
                                         href={social.url}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="text-sm text-brand-ink/75 underline-offset-2 hover:text-brand-ink hover:underline"
+                                        className="text-base text-brand-ink/75 underline-offset-2 hover:text-brand-ink hover:underline"
                                     >
                                         {social.label}
                                     </a>
@@ -97,7 +97,7 @@ export function SiteFooter() {
                                 <li key={`${link.label}-${link.url}`}>
                                     <Link
                                         href={link.url}
-                                        className="text-sm text-brand-ink/75 hover:text-brand-ink"
+                                        className="text-base text-brand-ink/75 hover:text-brand-ink"
                                     >
                                         {link.label}
                                     </Link>
@@ -107,7 +107,7 @@ export function SiteFooter() {
                     </div>
                 ))}
             </div>
-            <div className="border-t border-brand-green/20 py-4 text-center text-xs text-brand-ink/60">
+            <div className="border-t border-brand-green/20 py-4 text-center text-sm text-brand-ink/70">
                 {copyright}
             </div>
         </footer>
