@@ -1,0 +1,264 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Figtree', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Elkris brand palette — derived from logo & packaging */
+    --color-brand-red: #d62828;
+    --color-brand-red-dark: #a61b1b;
+    --color-brand-green: #1b7a36;
+    --color-brand-green-dark: #115c28;
+    --color-brand-cream: #fdf6ec;
+    --color-brand-sand: #f5e9d7;
+    --color-brand-gold: #e9a31a;
+    --color-brand-ink: #2b1c14;
+    --color-brand-mint: #e8f5ec;
+    --color-brand-mint-strong: #d3ecdb;
+    --color-brand-leaf: #279143;
+}
+
+:root {
+    --background: oklch(0.985 0.008 85);
+    --foreground: oklch(0.18 0.02 50);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.18 0.02 50);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.18 0.02 50);
+    --primary: oklch(0.552 0.195 27.3);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.5 0.15 145);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.96 0.012 85);
+    --muted-foreground: oklch(0.4 0.02 50);
+    --accent: oklch(0.95 0.03 150);
+    --accent-foreground: oklch(0.28 0.06 150);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.985 0 0);
+    --border: oklch(0.88 0.02 85);
+    --input: oklch(0.88 0.02 85);
+    --ring: oklch(0.552 0.195 27.3);
+    --chart-1: oklch(0.552 0.195 27.3);
+    --chart-2: oklch(0.5 0.13 145);
+    --chart-3: oklch(0.76 0.14 75);
+    --chart-4: oklch(0.6 0.118 184.704);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.75rem;
+    --sidebar: oklch(0.985 0.008 85);
+    --sidebar-foreground: oklch(0.22 0.02 50);
+    --sidebar-primary: oklch(0.552 0.195 27.3);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.955 0.025 85);
+    --sidebar-accent-foreground: oklch(0.25 0.03 50);
+    --sidebar-border: oklch(0.91 0.02 85);
+    --sidebar-ring: oklch(0.552 0.195 27.3);
+}
+
+.dark {
+    --background: oklch(0.18 0.015 50);
+    --foreground: oklch(0.97 0.008 85);
+    --card: oklch(0.22 0.015 50);
+    --card-foreground: oklch(0.97 0.008 85);
+    --popover: oklch(0.22 0.015 50);
+    --popover-foreground: oklch(0.97 0.008 85);
+    --primary: oklch(0.62 0.19 27.3);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.55 0.14 145);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.28 0.015 50);
+    --muted-foreground: oklch(0.76 0.015 85);
+    --accent: oklch(0.32 0.04 150);
+    --accent-foreground: oklch(0.97 0.01 150);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.34 0.015 50);
+    --input: oklch(0.34 0.015 50);
+    --ring: oklch(0.62 0.19 27.3);
+    --chart-1: oklch(0.62 0.19 27.3);
+    --chart-2: oklch(0.55 0.12 145);
+    --chart-3: oklch(0.76 0.14 75);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.22 0.015 50);
+    --sidebar-foreground: oklch(0.97 0.008 85);
+    --sidebar-primary: oklch(0.62 0.19 27.3);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.3 0.02 50);
+    --sidebar-accent-foreground: oklch(0.97 0.008 85);
+    --sidebar-border: oklch(0.32 0.015 50);
+    --sidebar-ring: oklch(0.62 0.19 27.3);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    /* Keep native <select> option lists readable in the OS popup */
+    select option {
+        background-color: #ffffff;
+        color: #2b1c14;
+    }
+}
+
+.article-body {
+    @apply text-lg leading-relaxed text-brand-ink/85;
+}
+
+.article-body > * + * {
+    @apply mt-5;
+}
+
+.article-body p {
+    @apply text-pretty;
+}
+
+.article-body h2 {
+    @apply mt-10 text-2xl font-extrabold text-brand-ink;
+}
+
+.article-body h3 {
+    @apply mt-8 text-xl font-bold text-brand-ink;
+}
+
+.article-body h4 {
+    @apply mt-6 text-lg font-bold text-brand-ink;
+}
+
+.article-body a {
+    @apply font-medium text-brand-green underline decoration-brand-green/30 underline-offset-2 hover:text-brand-red;
+}
+
+.article-body strong {
+    @apply font-semibold text-brand-ink;
+}
+
+.article-body ul {
+    @apply list-disc pl-6;
+}
+
+.article-body ol {
+    @apply list-decimal pl-6;
+}
+
+.article-body li + li {
+    @apply mt-2;
+}
+
+.article-body blockquote {
+    @apply border-l-4 border-brand-gold pl-5 text-brand-ink/75 italic;
+}
+
+.article-body img {
+    @apply my-6 w-full rounded-2xl;
+}
+
+.article-body figure {
+    @apply my-8;
+}
+
+.article-body figcaption {
+    @apply mt-2 text-center text-sm text-muted-foreground;
+}
+
+.article-body hr {
+    @apply my-8 border-border;
+}
+
+.article-body table {
+    @apply my-6 w-full border-collapse text-base;
+}
+
+.article-body th {
+    @apply border border-border bg-brand-cream px-3 py-2 text-left font-semibold text-brand-ink;
+}
+
+.article-body td {
+    @apply border border-border px-3 py-2 align-top;
+}
+
+.article-body code {
+    @apply rounded bg-muted px-1.5 py-0.5 text-sm;
+}
+
+.article-body pre {
+    @apply overflow-x-auto rounded-xl bg-brand-ink p-4 text-sm text-brand-cream;
+}
+
+.article-video-frame {
+    @apply aspect-video overflow-hidden rounded-2xl bg-black;
+}
+
+.article-video-frame iframe,
+.article-video-frame video {
+    @apply size-full border-0 object-contain;
+}
+
+/* Slow infinite drift for the Customer Stories marquee (paused on hover/focus). */
+@keyframes testimonials-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,18 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+.fi-sidebar {
+    --sidebar-width: 17rem;
+}
+
+.elkris-admin-hero {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(233, 163, 26, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(135deg, #fdf6ec 0%, #ffffff 55%, #e8f5ec 100%);
+}

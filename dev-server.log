@@ -1,0 +1,36 @@
+> Composer\Config::disableProcessTimeout
+> npx concurrently -c "#93c5fd,#c4b5fd,#fdba74" "php artisan serve" "php artisan queue:listen --tries=1" "npm run dev" --names='server,queue,vite'
+npm warn Unknown project config "public-hoist-pattern". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[vite] npm warn Unknown env config "public-hoist-pattern". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[vite] 
+[vite] > dev
+[vite] > vite
+[vite] 
+[vite] npm warn Unknown project config "public-hoist-pattern". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[queue] 
+[queue]    INFO  Processing jobs from the [default] queue.  
+[queue] 
+[server] 
+[server]    INFO  Server running on [http://127.0.0.1:8000].  
+[server] 
+[server]   Press Ctrl+C to stop the server
+[server] 
+[vite] [2m14:11:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m info: Types generated for actions, routes, form variants
+[vite]   Plugin: [35m@laravel/vite-plugin-wayfinder[39m
+[vite] 
+[vite]   [32m[1mVITE[22m v7.3.6[39m  [2mready in [0m[1m3831[22m[2m[0m ms[22m
+[vite] 
+[vite]   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[vite] [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[vite] 
+[vite]   [31m[1mLARAVEL[22m v13.32.0[39m  [2mplugin[22m [1mv2.1.0[22m
+[vite] 
+[vite]   [32m➜[39m  [1mAPP_URL[22m: [36mhttp://localhost:[1m8000[22m[39m
+[server]   2026-09-22 14:11:24 / .................................................................................. ~ 504.11ms
+[server]   2026-09-22 14:13:10 / ........................................................................................ ~ 4s
+[server]   2026-09-22 14:13:20 /_boost/browser-logs ..................................................................... ~ 1s
+[server]   2026-09-22 14:13:27 /_boost/browser-logs ..................................................................... ~ 1s
+[server]   2026-09-22 14:13:31 / .................................................................................. ~ 522.83ms
+[server]   2026-09-22 14:13:31 /favicon.svg ............................................................................. ~ 1s
+[server]   2026-09-22 14:13:33 /favicon.ico ......................................................................... ~ 0.20ms
+[server]   2026-09-22 14:13:33 /_boost/browser-logs ............................................................... ~ 509.23ms
